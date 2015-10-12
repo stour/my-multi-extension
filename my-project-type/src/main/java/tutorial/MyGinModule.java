@@ -8,20 +8,21 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package tutorial.myprojecttype.server;
+package tutorial;
 
-import org.eclipse.che.api.project.server.type.ProjectType;
-import org.eclipse.che.inject.DynaModule;
+import org.eclipse.che.ide.api.extension.ExtensionGinModule;
+import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.multibindings.Multibinder;
+import com.google.gwt.inject.client.AbstractGinModule;
+import com.google.gwt.inject.client.multibindings.GinMultibinder;
 
-@DynaModule
-public class MyProjectTypeModule extends AbstractModule {
-    /** {@inheritDoc} */
+@ExtensionGinModule
+public class MyGinModule extends AbstractGinModule {
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
-        Multibinder<ProjectType> projectTypeMultibinder = Multibinder.newSetBinder(binder(), ProjectType.class);
-        projectTypeMultibinder.addBinding().to(MyProjectType.class);
+        GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class).addBinding().to(MyWizard.class);
     }
 }

@@ -8,19 +8,22 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package tutorial.myprojecttype.server;
+package tutorial;
 
 import org.eclipse.che.api.project.server.type.ProjectType;
-import org.eclipse.che.ide.Constants;
+import org.eclipse.che.inject.DynaModule;
 
-import com.google.inject.Singleton;
-import tutorial.myprojecttype.shared.ProjectAttributes;
+import com.google.inject.AbstractModule;
+import com.google.inject.multibindings.Multibinder;
 
-@Singleton
-public class MyProjectType extends ProjectType {
- 
-    public MyProjectType() {
-        super(ProjectAttributes.MY_PROJECT_TYPE_ID, ProjectAttributes.MY_PROJECT_TYPE_NAME, true, false);
-        addConstantDefinition(Constants.LANGUAGE, "language", ProjectAttributes.PROGRAMMING_LANGUAGE);
+@DynaModule
+public class MyModule extends AbstractModule {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void configure() {
+        Multibinder<ProjectType> projectTypeMultibinder = Multibinder.newSetBinder(binder(), ProjectType.class);
+        projectTypeMultibinder.addBinding().to(MyProjectType.class);
     }
 }
