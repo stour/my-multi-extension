@@ -18,9 +18,9 @@
         <groupId>org.eclipse.che.depmgt</groupId>
         <version>3.13.1-SNAPSHOT</version>
     </parent>
-    <artifactId>my-assembly</artifactId>
+    <artifactId>my-multi-extension</artifactId>
     <packaging>che-plugin</packaging>
-    <name>Tutorial :: Assembly</name>
+    <name>Tutorial :: My Multi Extension</name>
     <dependencies>
         <dependency>
             <groupId>tutorial</groupId>
