@@ -38,4 +38,14 @@
             <version>${project.version}</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.che.core</groupId>
+                <artifactId>che-maven-plugin</artifactId>
+                <version>${project.version}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
