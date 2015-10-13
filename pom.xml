@@ -20,7 +20,6 @@
     </parent>
     <groupId>tutorial</groupId>
     <artifactId>my-multi-extension</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Tutorial :: My Multi Extension</name>
     <modules>
