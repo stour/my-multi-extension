@@ -18,24 +18,15 @@
         <groupId>org.eclipse.che.depmgt</groupId>
         <version>3.13.1-SNAPSHOT</version>
     </parent>
+    <groupId>tutorial</groupId>
     <artifactId>my-multi-extension</artifactId>
-    <packaging>che-plugin</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>Tutorial :: My Multi Extension</name>
-    <dependencies>
-        <dependency>
-            <groupId>tutorial</groupId>
-            <artifactId>my-action</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>tutorial</groupId>
-            <artifactId>my-project-type</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>tutorial</groupId>
-            <artifactId>my-service</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>my-project-type</module>
+        <module>my-service</module>
+        <module>my-action</module>
+        <module>my-assembly</module>
+    </modules>
 </project>
